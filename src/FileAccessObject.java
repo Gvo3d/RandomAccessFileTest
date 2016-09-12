@@ -19,10 +19,19 @@ public class FileAccessObject {
 
     public boolean write(String ch){
         try {
-            file.writeUTF(ch);
+            file.seek(file.length());
+            file.writeBytes(ch);
         } catch (IOException e) {
             return false;
         }
         return true;
+    }
+
+    public void clear(){
+        try {
+            file.seek(0);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

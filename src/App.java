@@ -7,6 +7,7 @@ public class App {
     public static void main(String[] args) {
     FileAccessObject fao = new FileAccessObject(new File("test.txt"));
 
-        fao.write("fuck");
+        fao.clear();
+        fao.write("test");
     }
 }
